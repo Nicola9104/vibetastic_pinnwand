@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "@/components/Header";
-import MasonryGrid from "@/components/MasonryGrid";
-import Footer from "@/components/Footer";
+import Header from "@/components/location/Header";
+import MasonryGrid from "@/components/location/MasonryGrid";
+import Footer from "@/components/location/Footer";
 
 const Home: React.FC = () => {
     return (
