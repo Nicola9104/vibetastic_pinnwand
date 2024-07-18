@@ -6,7 +6,9 @@ import QRCodeCanvas from './QRCodeCanvas';
 
 const Header: React.FC = () => {
     const router = useRouter();
-    const { id } = router.query; // Extract [id] from the router's query object
+
+    // Fetching the full URL
+    const fullUrl = typeof window !== 'undefined' ? window.location.href : '';
     return (
         <header className="bg-black text-white p-4 flex justify-between items-center">
             <div className="flex-1 text-4xl font-bold" style={{flex: '2'}}>
@@ -21,7 +23,7 @@ const Header: React.FC = () => {
             </div>
             <div className="text-lg" style={{flex: '1'}}>
                 <QRCodeCanvas
-                    text={process.env.NEXT_PUBLIC_URL+'/create/'+id}
+                    text={fullUrl.replace('location', 'create')}
                 />
             </div>
         </header>
