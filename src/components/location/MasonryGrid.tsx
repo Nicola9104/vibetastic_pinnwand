@@ -8,7 +8,7 @@ import ImageComponent from './ImageComponent';
 
 const MasonryGrid: React.FC = () => {
     const breakpointColumnsObj = {
-        default: 2,
+        default: 3,
         700: 1,
     };
 
