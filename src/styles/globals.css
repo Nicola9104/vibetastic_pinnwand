@@ -2,10 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Tailwind configuration should include basic flex and height settings */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+main {
+  flex: 1;
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+}
+.transition-transform {
+  transition: transform 0.5s ease-out;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,8 +51,3 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
