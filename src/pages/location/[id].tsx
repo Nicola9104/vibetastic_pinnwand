@@ -80,7 +80,10 @@ const Home: React.FC = () => {
 
     const addNewVibe = () => {
         const newText = `New vibe added at ${Date.now()}`
-        const newContent = <Message key={Date.now()} text={newText}  isHighlighted/>;
+        const highlighted = content.length % 3 == 0;
+
+        const newContent = <Message key={Date.now()} text={newText} isHighlighted={highlighted}/>;
+
         setContent((prevContent) => [newContent, ...prevContent]);
         if (content.length > 30) {
             setContent(content.slice(-30, content.length));
