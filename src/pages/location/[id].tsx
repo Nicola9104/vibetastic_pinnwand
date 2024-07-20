@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Header from "@/components/location/Header";
 import Footer from "@/components/location/Footer";
 import Column from "@/components/location/Column";
@@ -60,11 +60,7 @@ const Home: React.FC = () => {
 
         if (col1Height <= col2Height) {
             setColumn1Content((prevContent) => {
-                const updatedContent = [newContent, ...prevContent];
-                if (column1Ref.current && column1Ref.current.scrollHeight > column1Ref.current.clientHeight) {
-                    updatedContent.pop();
-                }
-                return updatedContent;
+                return [newContent, ...prevContent];
             });
             col1Height += 1; // Adjust height for simplicity
         } else {
@@ -83,21 +79,25 @@ const Home: React.FC = () => {
     };
 
     const addNewVibe = () => {
-        const newContent = <Message key={Date.now()} text="New vibe added!" isHighlighted/>;
+        const newText = `New vibe added at ${Date.now()}`
+        const newContent = <Message key={Date.now()} text={newText}  isHighlighted/>;
         setContent((prevContent) => [newContent, ...prevContent]);
+        if (content.length > 30) {
+            setContent(content.slice(-30, content.length));
+        }
         distributeContent(newContent);
     };
 
     return (
         <div className="flex flex-col min-h-screen bg-gray-900 text-white">
             <Header/>
+            <button
+                onClick={addNewVibe}
+                className="mb-4 p-2 bg-blue-500 text-white rounded"
+            >
+                Add New Vibe
+            </button>
             <main className="flex-1 p-4 flex overflow-hidden">
-                <button
-                    onClick={addNewVibe}
-                    className="mb-4 p-2 bg-blue-500 text-white rounded"
-                >
-                    Add New Vibe
-                </button>
                 <div className="flex flex-1 gap-4">
                     <div ref={column1Ref} className="flex-1 overflow-hidden">
                         <Column content={column1Content} onHeightChange={setColumn1Height}/>
