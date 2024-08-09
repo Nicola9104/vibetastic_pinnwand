@@ -7,18 +7,18 @@ import ImageComponent from "@/components/location/ImageComponent";
 
 const Home: React.FC = () => {
     const initialContent = [
-        <Message key="1" text="Asdfhshj asvhjsvsj asjknccvhs!" isHighlighted/>,
+        <Message key="1" message="Asdfhshj asvhjsvsj asjknccvhs!" isHighlighted/>,
         <Message key="2"
-                 text="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.🎉"/>,
-        <Message key="3" text="Asdfhshj asvhjsvsj asjknccvhs!😂"/>,
+                 message="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.🎉"/>,
+        <Message key="3" message="Asdfhshj asvhjsvsj asjknccvhs!😂"/>,
         <ImageComponent key="4" src="/images/party/image1.jpg" alt="Party Image 1"/>,
         <Message key="5"
-                 text="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.🎉"/>,
+                 message="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.🎉"/>,
         <Message key="6"
-                 text="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+                 message="Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
                  isHighlighted/>,
         <ImageComponent key="7" src="/images/party/image2.jpg" alt="Party Image 2"/>,
-        <Message key="8" text="Asdfhshj asvhjsvsj asjknccvhs!😍" isHighlighted/>,
+        <Message key="8" message="Asdfhshj asvhjsvsj asjknccvhs!😍" isHighlighted/>,
         <ImageComponent key="9" src="/images/party/image3.jpg" alt="Party Image 3"/>
     ];
 
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
         const newText = `New vibe added at ${Date.now()}`
         const highlighted = content.length % 3 == 0;
 
-        const newContent = <Message key={Date.now()} text={newText} isHighlighted={highlighted}/>;
+        const newContent = <Message key={Date.now()} message={newText} isHighlighted={highlighted}/>;
 
         setContent((prevContent) => [newContent, ...prevContent]);
         if (content.length > 30) {
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
             <Header/>
             <button
                 onClick={addNewVibe}
-                className="mb-4 p-2 bg-blue-500 text-white rounded"
+                className="mb-4 p-2 bg-ad-and-events-blue text-white rounded"
             >
                 Add New Vibe
             </button>
@@ -104,6 +104,9 @@ const Home: React.FC = () => {
                 <div className="flex flex-1 gap-4">
                     <div ref={column1Ref} className="flex-1 overflow-hidden">
                         <Column content={column1Content} onHeightChange={setColumn1Height}/>
+                    </div>
+                    <div ref={column2Ref} className="flex-1 overflow-hidden">
+                        <Column content={column2Content} onHeightChange={setColumn2Height}/>
                     </div>
                     <div ref={column2Ref} className="flex-1 overflow-hidden">
                         <Column content={column2Content} onHeightChange={setColumn2Height}/>

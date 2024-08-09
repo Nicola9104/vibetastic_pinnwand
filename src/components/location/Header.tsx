@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         <header className="bg-black text-white p-4 flex justify-between items-center">
             <div className="flex-1 text-4xl font-bold" style={{flex: '2'}}>
                 <Image
-                    src="/images/logo.png"
+                    src="/images/Logo_Long_PNGWhite.png"
                     width={0}
                     height={0}
                     sizes="100vw"

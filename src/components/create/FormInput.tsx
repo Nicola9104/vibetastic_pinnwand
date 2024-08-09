@@ -22,7 +22,7 @@ const FormInput: React.FC<{ onNext: () => void }> = ({ onNext }) => {
                 placeholder="Deine Nachricht..."
                 rows={5}
             />
-            <button onClick={onNext} className="bg-blue-500 text-white p-2 rounded w-full">Senden</button>
+            <button onClick={onNext} className="bg-ad-and-events-blue text-white p-2 rounded w-full">Senden</button>
         </div>
     );
 };

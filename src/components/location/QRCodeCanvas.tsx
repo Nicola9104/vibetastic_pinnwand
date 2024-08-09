@@ -19,7 +19,7 @@ const QRCodeCanvas: React.FC<QRCodeCanvasProps> = ({ text }) => {
                 width: 200,
                 color: {
                     light: '#000000',
-                    dark: '#3b82f6',
+                    dark: '#01b1f0',
                 },
             }}
         />

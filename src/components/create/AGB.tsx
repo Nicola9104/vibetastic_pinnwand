@@ -26,7 +26,7 @@ const AGB:  React.FC<{ onNext: () => void, }> = ({ onNext }) => {
                 </div>
                 <button
                     onClick={toggleNext}
-                    className="bg-blue-500 text-white font-bold py-2 px-4 rounded w-full hover:bg-blue-700"
+                    className="bg-ad-and-events-blue text-white font-bold py-2 px-4 rounded w-full hover:bg-blue-700"
                 >
                     Jetzt Viben!
                 </button>
